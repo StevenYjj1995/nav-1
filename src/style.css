@@ -18,8 +18,18 @@ img {
   max-height: 100%;
 }
 body {
-  background: #eee;
-  /* border: 1px solid red; */
+  background: rgb(123, 183, 191);
+  background-image: url(./images/navbackground.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  /* background: #eee; */
+
+  height: 100vh;
+}
+@media (max-width: 500px) {
+  body {
+    background: #eee;
+  }
 }
 ul,
 ol {
