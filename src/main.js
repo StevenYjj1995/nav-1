@@ -60,6 +60,9 @@ window.onbeforeunload = () => {
   localStorage.setItem("x", string);
 };
 $(document).on("keypress", (e) => {
+  if(e.target.tagName.toLowerCase()==='input'){
+    return
+  }
   const { key } = e; //等价于const key =e.key
   for (let i = 0; i < hashMap.length; i++) {
     if (hashMap[i].logo.toLowerCase() === key) {
@@ -67,3 +70,40 @@ $(document).on("keypress", (e) => {
     }
   }
 });
+
+
+// function pushbtn(event) {
+//   var keycode = event.keyCode,
+//     key = String.fromCharCode(keycode),
+
+//     // finding the element on which the event
+//     // was originally fired:
+//     source = event.target,
+
+//     // an Array of element-types upon which
+//     // the function should not fire (to prevent
+//     // interfering needlessly with the UI and
+//     // user-expectations):
+//     exclude = ['input', 'textarea'];
+
+//   // finding the element-type (tagName) of the element
+//   // upon which the event was fired, converting it to
+//   // a lower-case string and then looking in the Array
+//   // of excluded elements to see if the element is held
+//   // within (-1 indicates the string was not found within
+//   // the Array):
+//   if (exclude.indexOf(source.tagName.toLowerCase()) === -1) {
+//     // console.log('You pressed ' + key + ' (keyCode: ' + keycode + ').');
+//     $(document).on("keypress", (e) => {
+//     const { key } = e; //等价于const key =e.key
+//     for (let i = 0; i < hashMap.length; i++) {
+//       if (hashMap[i].logo.toLowerCase() === key) {
+//       window.open(hashMap[i].url);
+//     }
+//   }
+// });
+//   }
+//   return;
+// }
+
+// document.addEventListener('keypress', pushbtn);
